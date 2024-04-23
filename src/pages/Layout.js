@@ -15,6 +15,7 @@ const Layout = () => {
         <main>
           <Outlet />
         </main>
+        <div className="space" />
         {location.pathname === "/login" ? "" : <Footer />}
       </LayoutInner>
     </LayoutWrap>

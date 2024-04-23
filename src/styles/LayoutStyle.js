@@ -9,5 +9,7 @@ export const LayoutWrap = styled.div`
 
 export const LayoutInner = styled.div`
   width: 100%;
-  height: 100vh;
+  .space {
+    height: 70px;
+  }
 `;
