@@ -4,7 +4,7 @@ export const LayoutWrap = styled.div`
   width: 375px;
   height: 100%;
   margin: 0 auto;
-  background: red;
+  background: #f9f9f9;
 `;
 
 export const LayoutInner = styled.div`
