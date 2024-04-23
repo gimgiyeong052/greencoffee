@@ -14,6 +14,7 @@ export const HeaderInner = styled.ul`
   gap: 50px;
   padding: 0 20px;
   border-bottom: 1px solid #d0d0d0;
+  box-shadow: 0px 0px 5px 0px rgba(51, 51, 51, 0.2);
   > li:nth-of-type(1) {
     cursor: pointer;
   }
