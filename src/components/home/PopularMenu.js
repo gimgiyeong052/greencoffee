@@ -10,19 +10,19 @@ const PopularMenu = () => {
       price: "6,500원",
     },
     {
-      pk: "1",
+      pk: "2",
       title: "카푸치노 라떼",
       img: "assets/menu.png",
       price: "5,500원",
     },
     {
-      pk: "1",
+      pk: "3",
       title: "프라푸치노",
       img: "assets/menu.png",
       price: "6,000원",
     },
     {
-      pk: "1",
+      pk: "4",
       title: "에스프레소",
       img: "assets/menu.png",
       price: "5,000원",
