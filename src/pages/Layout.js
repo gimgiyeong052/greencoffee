@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 
 const Layout = () => {
   const location = useLocation();
-  console.log(location);
 
   return (
     <LayoutWrap>
@@ -15,6 +14,7 @@ const Layout = () => {
         <main>
           <Outlet />
         </main>
+        <div className="space" />
         {location.pathname === "/login" ? "" : <Footer />}
       </LayoutInner>
     </LayoutWrap>

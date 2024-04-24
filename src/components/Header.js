@@ -1,9 +1,15 @@
 import React from "react";
-import { HeaderWrap } from "../styles/HeaderStyle";
-import { useLocation } from "react-router";
+import { HeaderInner, HeaderWrap } from "../styles/HeaderStyle";
+import { useLocation, useNavigate } from "react-router";
 
 const Header = () => {
+  const navigate = useNavigate();
   const location = useLocation();
+
+  const handelBack = () => {
+    navigate(-1);
+  };
+
   const pathName = location.pathname.replace("/", "");
 
   const headerList = {
@@ -26,7 +32,15 @@ const Header = () => {
 
   return (
     <HeaderWrap>
-      <div>난 헤더:{headerTitle}</div>
+      <HeaderInner>
+        <li className="img" onClick={handelBack}>
+          <img src={`${process.env.PUBLIC_URL}/assets/arrow-left.png`} alt="" />
+        </li>
+        <li>
+          <h1>{headerTitle}</h1>
+        </li>
+        <li></li>
+      </HeaderInner>
     </HeaderWrap>
   );
 };

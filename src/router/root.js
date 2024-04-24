@@ -1,5 +1,6 @@
-import React, { lazy } from "react";
+import React, { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
+import Loading from "../components/Loading";
 
 const Layout = lazy(() => import("../pages/Layout"));
 const Home = lazy(() => import("../pages/Home"));
@@ -16,6 +17,7 @@ const Resign = lazy(() => import("../pages/Resign"));
 const SignUp = lazy(() => import("../pages/SignUp"));
 const Terms = lazy(() => import("../pages/Terms"));
 const UserInfo = lazy(() => import("../pages/UserInfo"));
+const Community = lazy(() => import("../pages/Community"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 const rootRouter = createBrowserRouter([
@@ -24,20 +26,126 @@ const rootRouter = createBrowserRouter([
     element: <Layout />,
     errorElement: <NotFound />,
     children: [
-      { index: true, element: <Home /> },
-      { path: "login", element: <Login /> },
-      { path: "cart", element: <MenuCart /> },
-      { path: "menudetail", element: <MenuDetail /> },
-      { path: "mypage", element: <MyPage /> },
-      { path: "order", element: <Order /> },
-      { path: "orderlist", element: <OrderList /> },
-      { path: "orderstatus", element: <OrderStatus /> },
-      { path: "favorite", element: <Favorite /> },
-      { path: "payment", element: <Payment /> },
-      { path: "resign", element: <Resign /> },
-      { path: "signup", element: <SignUp /> },
-      { path: "terms", element: <Terms /> },
-      { path: "userinfo", element: <UserInfo /> },
+      {
+        index: true,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Home />
+          </Suspense>
+        ),
+      },
+      {
+        path: "login",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Login />
+          </Suspense>
+        ),
+      },
+      {
+        path: "cart",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <MenuCart />
+          </Suspense>
+        ),
+      },
+      {
+        path: "menudetail",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <MenuDetail />
+          </Suspense>
+        ),
+      },
+      {
+        path: "mypage",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <MyPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "order",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Order />
+          </Suspense>
+        ),
+      },
+      {
+        path: "orderlist",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <OrderList />
+          </Suspense>
+        ),
+      },
+      {
+        path: "orderstatus",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <OrderStatus />{" "}
+          </Suspense>
+        ),
+      },
+      {
+        path: "favorite",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Favorite />
+          </Suspense>
+        ),
+      },
+      {
+        path: "payment",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Payment />
+          </Suspense>
+        ),
+      },
+      {
+        path: "resign",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Resign />
+          </Suspense>
+        ),
+      },
+      {
+        path: "signup",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <SignUp />
+          </Suspense>
+        ),
+      },
+      {
+        path: "terms",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Terms />
+          </Suspense>
+        ),
+      },
+      {
+        path: "userinfo",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <UserInfo />
+          </Suspense>
+        ),
+      },
+      {
+        path: "community",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Community />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);
